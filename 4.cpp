@@ -19,23 +19,23 @@ void calcf2(ofstream& file) {
     }
 }
 
-void All(ofstream& file) {
+void All() {
+    ofstream file("mybin4.dat", ios::binary); 
+    if (!file) {
+        cout << "XXXX" << endl;
+        return; 
+    }
+
     int num1 = 1234;
     file.write((char*)&num1, sizeof(num1));
 
     calcf1(file);
     calcf2(file);
+
+    file.close(); 
 }
 
 int main() {
-    ofstream file("mybin4.dat", ios::binary);
-    if (!file) {
-        cout << "XXXX" << endl;
-        return 1;
-    }
-
-    All(file);
-    file.close();
-
+    All(); 
     return 0;
 }
