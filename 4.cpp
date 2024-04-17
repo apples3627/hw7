@@ -46,7 +46,7 @@ void All() {
     calcf1(file, mem);
     calcf2(file, mem);
     file.close();
-}
+} 
 
 int main() {
     All();
